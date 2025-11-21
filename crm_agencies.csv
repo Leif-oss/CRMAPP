@@ -1,0 +1,5 @@
+AgencyID,AgencyName,Office,WebAddress,AgencyCode,Notes,PrimaryUnderwriter
+501,SafeHands Insurance,New York HQ,safehands.com,SHI-001,Top performer agency.,Alice Smith
+502,RapidCover Agency,New York HQ,,RCA-002,"New account, needs attention.",Alice Smith
+503,Windy City Brokers,Chicago Branch,windycity.com,WCB-003,,Charlie Day
+504,Lone Star Life,Austin Hub,,LSL-004,Rural specialist.,Diana Prince
