@@ -1,4 +1,2 @@
-ContactID,AgencyID,Name,Role,Email,Notes
-1,1,agent 1,agent,adas@adsasa.com,sadsad
-2,1,Tim tom,tom,tim@tom.com,timton
-3,1,Max ,pooper,,
+ContactID,AgencyID,Name,Role,Email,Notes,Phone,Preferences,LinkedIn
+2,25,Paul Keller,Agent,paul@paul.com,,8582752385.0,,
