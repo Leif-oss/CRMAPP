@@ -23,3 +23,8 @@ Date,EmployeeName,AgencyName,ContactName,Type,Notes
 2025-11-23 12:04:23,Employee 3 SDO,Agency 1,agent 1,Call,
 2025-11-23 12:04:23,Employee 3 SDO,Agency 1,Tim tom,Call,
 2025-11-23 12:04:23,Employee 3 SDO,Agency 1,Max ,Call,
+2025-11-23 17:11:08,Employee 1 SDO,Agency 1,Tom JOnes,Call,
+2025-11-24 14:45:59,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Call,"Grabbed drinks, wants a highlight sheet"
+2025-11-24 14:45:59,Employee 3 SDO,ALLIANT INSURAN,Tim Jones,Call,"Grabbed drinks, wants a highlight sheet"
+2025-11-24 14:49:18,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Call,
+2025-11-24 14:49:30,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Email,

@@ -1,28 +1,4 @@
 AgencyID,AgencyName,Office,WebAddress,AgencyCode,Notes,PrimaryUnderwriter
-1,Agency 1,SDO,www.deanshomer.com,100001,Created from production upload,Employee 1 SDO
-2,Agency 2,SDO,,100002,Created from production upload,Employee 1 SDO
-3,Agency 3,SDO,,100003,Created from production upload,Employee 1 SDO
-4,Agency 4,SDO,,100004,Created from production upload,Employee 1 SDO
-5,Agency 5,SDO,,100005,Created from production upload,Employee 1 SDO
-6,Agency 6,SDO,,100006,Created from production upload,Employee 1 SDO
-7,Agency 7,SDO,,100007,Created from production upload,Employee 1 SDO
-8,Agency 8,SDO,,100008,Created from production upload,Employee 1 SDO
-9,Agency 9,SDO,,100009,Created from production upload,Employee 1 SDO
-10,Agency 10,SDO,,100010,Created from production upload,Employee 1 SDO
-11,Agency 11,SDO,,100011,Created from production upload,Employee 1 SDO
-12,Agency 12,SDO,snappins.com,100012,Created from production upload,Employee 1 SDO
-13,Agency 13,SDO,,100013,Created from production upload,Employee 1 SDO
-14,Agency 14,SDO,,100014,Created from production upload,Employee 1 SDO
-15,Agency 15,SDO,,100015,Created from production upload,Employee 1 SDO
-16,Agency 16,SDO,,100016,Created from production upload,Employee 1 SDO
-17,Agency 17,SDO,,100017,Created from production upload,Employee 1 SDO
-18,Agency 18,SDO,,100018,Created from production upload,Employee 1 SDO
-19,Agency 19,SDO,,100019,Created from production upload,Employee 1 SDO
-20,Agency 20,SDO,,100020,Created from production upload,Employee 1 SDO
-21,Agency 21,SDO,,100021,Created from production upload,Employee 1 SDO
-22,Agency 22,SDO,,100022,Created from production upload,Employee 1 SDO
-23,Agency 23,SDO,,100023,Created from production upload,Employee 1 SDO
-24,Agency 1,SDO,,100024,Created from production upload,Employee 1 SDO
 25,Agency 1,FNO,,100001,,Employee 1 FNO
 25,Agency 2,FNO,,100002,,Employee 1 FNO
 25,Agency 3,FNO,,100003,,Employee 1 FNO
@@ -95,3 +71,68 @@ AgencyID,AgencyName,Office,WebAddress,AgencyCode,Notes,PrimaryUnderwriter
 71,Agency 22,PHX,,100022,,Employee 1 PHX
 72,Agency 23,PHX,,100023,,Employee 1 PHX
 73,Agency 1,PHX,,100024,,Employee 1 PHX
+74,ALLIANT INSURAN,SDO,,10233,,Employee 1 SDO
+75,GALLAGHER,SDO,,10245,,Employee 1 SDO
+76,TEAGUE INSURANC,SDO,,10383,,Employee 1 SDO
+77,WILLIS TOWERS,SDO,,10670,,Employee 1 SDO
+78,HUB SAN DIEGO,SDO,,10864,,Employee 1 SDO
+79,BH GOLD,SDO,,12503,,Employee 1 SDO
+80,PAUMA/VALLEY,SDO,,12935,,Employee 1 SDO
+81,ARTHUR J,SDO,,14847,,Employee 1 SDO
+82,RANCHO MESA,SDO,,16720,,Employee 1 SDO
+83,LOCKTON - SD,SDO,,19586,,Employee 1 SDO
+84,CMR RISK & INSU,SDO,,21537,,Employee 1 SDO
+85,IOA SAN DIEGO,SDO,,62891,,Employee 1 SDO
+86,BURNS & WILCOX,SDO,,65275,,Employee 1 SDO
+87,BARNES & CO,SDO,,66437,,Employee 1 SDO
+88,GALLAGHER SD,SDO,,66475,,Employee 1 SDO
+89,SAX INSURANCE,SDO,,66787,,Employee 1 SDO
+90,MARSH & MCLENNA,SDO,,66936,,Employee 1 SDO
+91,MICHAEL KENNEDY,SDO,,67356,,Employee 1 SDO
+92,NFP PROPERTY,SDO,,67376,,Employee 1 SDO
+93,USI IRVINE,SDO,,67397,,Employee 1 SDO
+94,JPL INS,SDO,,67538,,Employee 1 SDO
+95,KEM JOY CORP,SDO,,67591,,Employee 1 SDO
+96,KHOTPANYA DALY,SDO,,67599,,Employee 1 SDO
+97,GAMIE,SDO,,67782,,Employee 1 SDO
+98,WHITEBOARD,SDO,,68530,,Employee 1 SDO
+99,PIPELINE INSURA,SDO,,71582,,Employee 1 SDO
+100,ERICKSON INSURA,SDO,,71611,,Employee 1 SDO
+101,SCOTT HELD INS,SDO,,71726,,Employee 1 SDO
+102,J.S. TUCKER INS,SDO,,71802,,Employee 1 SDO
+103,MCGRIFF INSURAN,SDO,,71863,,Employee 1 SDO
+104,MICHAEL EHRENFE,SDO,,71871,,Employee 1 SDO
+105,KEMJOY CORP.,SDO,,71934,,Employee 1 SDO
+106,INSUREONE,SDO,,71964,,Employee 1 SDO
+107,MAINLINE INSURA,SDO,,72087,,Employee 1 SDO
+108,"RIVERA, RALPH",SDO,,72247,,Employee 1 SDO
+109,ALVARADO PACIFI,SDO,,72254,,Employee 1 SDO
+110,CHAMPION RISK,SDO,,72261,,Employee 1 SDO
+111,ENDLESS INSURAN,SDO,,72276,,Employee 1 SDO
+112,ASSUREDPARTNERS,SDO,,72343,,Employee 1 SDO
+113,NFP PROPERTY,SDO,,72387,,Employee 1 SDO
+114,"CSGINS, INC",SDO,,72481,,Employee 1 SDO
+115,SWAN SOLUTIONS,SDO,,72488,,Employee 1 SDO
+116,RISK PLACEMENT,SDO,,72553,,Employee 1 SDO
+117,ASSUREDPARTNERS,SDO,,72745,,Employee 1 SDO
+118,PROCYON,SDO,,72949,,Employee 1 SDO
+119,SNAPP,SDO,,73111,,Employee 1 SDO
+120,APEX RISK,SDO,,73233,,Employee 1 SDO
+121,RUBIN INS,SDO,,73277,,Employee 1 SDO
+122,VALLEY CENTER,SDO,,73330,,Employee 1 SDO
+123,ALKEME,SDO,,73340,,Employee 1 SDO
+124,TRI-STAR,SDO,,73352,,Employee 1 SDO
+125,NOCERO,SDO,,73360,,Employee 1 SDO
+126,INSUREONE,SDO,,73461,,Employee 1 SDO
+127,CREST INSURANCE,SDO,,73509,,Employee 1 SDO
+128,DOLE,SDO,,73518,,Employee 1 SDO
+129,DJM INSURANCE,SDO,,73639,,Employee 1 SDO
+130,RAMSES,SDO,,73642,,Employee 1 SDO
+131,BUSINESS,SDO,,73693,,Employee 1 SDO
+132,GALLAGHER,SDO,,73707,,Employee 1 SDO
+133,GALLAGHER SD,SDO,,73753,,Employee 1 SDO
+134,ARTHUR J,SDO,,73774,,Employee 1 SDO
+135,NOCERO,SDO,,73830,,Employee 1 SDO
+136,STANLEY WONG,SDO,,73925,,Employee 1 SDO
+137,ARCHER INS,SDO,,74011,,Employee 1 SDO
+138,JWCIB,SDO,,99214,,Employee 1 SDO
