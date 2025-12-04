@@ -14,25 +14,25 @@ st.set_page_config(page_title="Insurance Marketing CRM", layout="wide")
 st.markdown(
     """
     <style>
-    /* -------- GLOBAL APP STYLING - DEANS & HOMER LOOK -------- */
+    /* -------- GLOBAL APP STYLING - DEANS & HOMER LOOK (TIGHTER, CLEANER) -------- */
 
     /* Main page background (custom gradient) */
     html, body, .stApp, [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #F4F7FA 0%, #1A4C87 50%, #F4F7FA 100%) !important;
+        background: linear-gradient(135deg, #f7f9fb 0%, #e5ecf5 46%, #f7f9fb 100%) !important;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
                      Roboto, "Helvetica Neue", Arial, sans-serif;
     }
 
     /* Main content container */
     .block-container {
-        background-color: rgba(255, 255, 255, 0.78);
-        border-radius: 14px;
-        padding: 1.8rem 2.2rem;
-        box-shadow: 0 10px 24px rgba(8, 18, 38, 0.18);
-        margin-top: 1.2rem;
-        margin-bottom: 1.8rem;
-        border: 1px solid rgba(208, 217, 230, 0.6);
-        backdrop-filter: blur(3px);
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 4px 16px rgba(12, 25, 48, 0.10);
+        margin-top: 0.8rem;
+        margin-bottom: 1rem;
+        border: 1.5px solid #c1cada;
+        backdrop-filter: none;
     }
 
     /* Headings - deep D&H navy */
@@ -43,22 +43,24 @@ st.markdown(
     }
 
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.4rem;
+        font-size: 1.65rem;
+        margin-bottom: 0.2rem;
     }
     h2 {
-        font-size: 1.3rem;
-        margin-top: 1.3rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
     }
     h3 {
-        font-size: 1.1rem;
-        margin-top: 1.0rem;
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.2rem;
     }
 
     /* Sidebar */
     [data-testid="stSidebar"] {
-        background: #e6edf5;
-        border-right: 1px solid #c2cfdd;
+        background: #eef2f7;
+        border-right: 1.5px solid #c2cfdd;
     }
     [data-testid="stSidebar"] h1,
     [data-testid="stSidebar"] h2,
@@ -70,17 +72,23 @@ st.markdown(
     .stButton>button {
         background-color: #0f2742;
         color: #ffffff;
-        border-radius: 6px;
-        padding: 0.4rem 0.9rem;
-        border: none;
+        border-radius: 4px;
+        padding: 0.42rem 0.9rem;
+        border: 1px solid #0f2742;
         font-size: 0.9rem;
-        font-weight: 500;
-        transition: background-color 0.18s ease, transform 0.12s ease;
+        font-weight: 560;
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08);
+        transition: background-color 0.16s ease, transform 0.1s ease, box-shadow 0.16s ease;
     }
     .stButton>button:hover {
-        background-color: #1e3c63;
+        background-color: #13385e;
         color: #ffffff;
         transform: translateY(-1px);
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12);
+    }
+    .stButton>button:active {
+        transform: translateY(0);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.14);
     }
 
     /* Links */
@@ -97,8 +105,16 @@ st.markdown(
     .stDataFrame {
         border-radius: 8px !important;
         overflow: hidden !important;
-        border: 1px solid #d0d9e6 !important;
+        border: 1.5px solid #c6d0de !important;
         background-color: #ffffff;
+        box-shadow: inset 0 0 0 1px #e4e9f1;
+    }
+    .stDataFrame table {
+        border-collapse: collapse !important;
+    }
+    .stDataFrame th, .stDataFrame td {
+        border: 1px solid #d4dbe7 !important;
+        padding: 6px 8px !important;
     }
 
     /* Labels / inputs */
@@ -112,11 +128,12 @@ st.markdown(
     .stTextArea textarea,
     .stSelectbox>div>div>select,
     .stDateInput>div>div>input {
-        border: 1px solid #c4cedd;
-        border-radius: 6px;
-        background-color: #f8fafc;
+        border: 1.4px solid #c4cedd;
+        border-radius: 5px;
+        background-color: #f9fbfe;
         color: #0f2742;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        padding: 0.45rem 0.55rem;
     }
 
     .stRadio>div>label {
@@ -136,41 +153,28 @@ st.markdown(
 
     .stMetric {
         background-color: #f2f5fb;
-        border-radius: 8px;
-        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        padding: 0.4rem 0.6rem;
+        border: 1px solid #d6dfeb;
     }
 
     /* ---- COLORED PANELS FOR DIFFERENT AREAS ---- */
     .panel {
-        border-radius: 10px;
-        padding: 0.9rem 1.1rem;
-        margin-bottom: 1.2rem;
-        box-shadow: 0 4px 14px rgba(15, 39, 66, 0.06);
-        border: 1px solid #d5dfec;
+        border-radius: 8px;
+        padding: 0.7rem 0.9rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0 2px 9px rgba(15, 39, 66, 0.07);
+        border: 1.5px solid #c3cbdb;
     }
-    .panel-company {
-        background-color: #f4fbff; /* light blue */
-    }
-    .panel-offices {
-        background-color: #fdf7ec; /* light warm */
-    }
-    .panel-office-left {
-        background-color: #f4fbff; /* light blue for employees */
-    }
-    .panel-office-right {
-        background-color: #f6f2ff; /* soft purple for search/list */
-    }
-    .panel-prod {
-        background-color: #f0f7f4; /* soft green tint for production */
-    }
-    .panel-activity {
-        background-color: #f6f8fc; /* light gray-blue for activity logs */
-    }
-    .panel-contacts {
-        background-color: #fff7fb; /* light pink for contacts */
-    }
+    .panel-company,
+    .panel-offices,
+    .panel-office-left,
+    .panel-office-right,
+    .panel-prod,
+    .panel-activity,
+    .panel-contacts,
     .panel-logs {
-        background-color: #f4fffb; /* aqua tint for activity history/logs */
+        background-color: #f5f7fb; /* unified pale blue-gray */
     }
     </style>
     """,
@@ -189,10 +193,44 @@ FILES = {
 }
 
 # --- CONSTANT DEFAULTS ---
-DEFAULT_OFFICES = ['BRA', 'FNO', 'LAF', 'LKO', 'MID', 'PAS', 'PHX', 'RCH', 'REN', 'SBO', 'SDO', 'SEA', 'LVS']
+OFFICE_LABELS = {
+    'BRA': 'Orange County',
+    'FNO': 'Fresno',
+    'LAF': 'Walnut Creek',
+    'LKO': 'Portland',
+    'MID': 'Mid West',
+    'PAS': 'Pasadena',
+    'PHX': 'Phoenix',
+    'RCH': 'Roseville',
+    'REN': 'Reno',
+    'SDO': 'San Diego',
+    'SEA': 'Seattle',
+    'LVS': 'Las Vegas',
+    'MHL': 'Woodland Hills',
+}
+DEFAULT_OFFICES = list(OFFICE_LABELS.keys())
 ADMIN_CODE = os.environ.get("CRM_ADMIN_CODE", "admin123")  # set env var CRM_ADMIN_CODE to override
 LOGIN_USER = os.environ.get("CRM_LOGIN_USER", "admin")
 LOGIN_PASSWORD = os.environ.get("CRM_LOGIN_PASSWORD", "admin123")
+
+def format_office(code):
+    """Return display-friendly office string while keeping the code for tracking."""
+    name = OFFICE_LABELS.get(str(code).strip(), str(code).strip())
+    return f"{code} - {name}" if name != code else str(code)
+
+def display_office_name(code):
+    """Return the friendly office name (no code prefix)."""
+    return OFFICE_LABELS.get(str(code).strip(), str(code).strip())
+
+def display_employee_name(name):
+    """Strip trailing office code suffix from employee name for display."""
+    display = name
+    for off in st.session_state.get('offices', []):
+        suff = f" {off}"
+        if str(display).endswith(suff):
+            display = display[:-len(suff)]
+            break
+    return display
 
 # --- PRODUCT HIGHLIGHTS LOADER ---
 def load_product_highlights():
@@ -232,6 +270,7 @@ def load_data():
     Loads data from CSVs, ensuring all required columns exist and handling NaN values.
     """
     data = {}
+    allowed_offices = set(OFFICE_LABELS.keys())
     offices_changed = False
     employees_changed = False
     agencies_changed = False
@@ -247,6 +286,11 @@ def load_data():
     else:
         data['offices'] = DEFAULT_OFFICES
         offices_changed = True
+    # Keep only known office codes and ensure all defaults exist
+    data['offices'] = [o for o in data['offices'] if o in OFFICE_LABELS]
+    for code in DEFAULT_OFFICES:
+        if code not in data['offices']:
+            data['offices'].append(code)
 
     # 2. EMPLOYEES
     if os.path.exists(FILES['employees']):
@@ -265,6 +309,12 @@ def load_data():
                 emp_id += 1
         data['employees'] = pd.DataFrame(rows, columns=['EmployeeID', 'Name', 'Office'])
         employees_changed = True
+    # Drop employees assigned to offices not in allowed list (e.g., legacy SBO)
+    if not data['employees'].empty:
+        before = len(data['employees'])
+        data['employees'] = data['employees'][data['employees']['Office'].isin(allowed_offices)]
+        if len(data['employees']) != before:
+            employees_changed = True
     if employees_changed:
         data['employees'].to_csv(FILES['employees'], index=False)
 
@@ -298,6 +348,12 @@ def load_data():
             columns=['AgencyID', 'AgencyName', 'Office', 'WebAddress', 'AgencyCode', 'Notes', 'PrimaryUnderwriter']
         )
         agencies_changed = True
+    # Drop agencies tied to offices not allowed
+    if not data['agencies'].empty:
+        before = len(data['agencies'])
+        data['agencies'] = data['agencies'][data['agencies']['Office'].isin(allowed_offices)]
+        if len(data['agencies']) != before:
+            agencies_changed = True
 
     if offices_changed:
         pd.DataFrame({'OfficeName': data['offices']}).to_csv(FILES['offices'], index=False)
@@ -340,15 +396,20 @@ def load_data():
     if os.path.exists(FILES['logs']):
         data['logs'] = pd.read_csv(FILES['logs'])
     else:
-        data['logs'] = pd.DataFrame(columns=['Date', 'EmployeeName', 'AgencyName', 'ContactName', 'Type', 'Notes'])
+        data['logs'] = pd.DataFrame(columns=['Date', 'EmployeeName', 'AgencyName', 'ContactName', 'Type', 'Notes', 'Office'])
         logs_changed = True
 
-    if not data['logs'].empty and 'Date' in data['logs'].columns:
-        data['logs']['Date'] = pd.to_datetime(data['logs']['Date'], errors='coerce')
-        before_len = len(data['logs'])
-        data['logs'].dropna(subset=['Date'], inplace=True)
-        if len(data['logs']) != before_len:
+    if not data['logs'].empty:
+        # Ensure Office column exists
+        if 'Office' not in data['logs'].columns:
+            data['logs']['Office'] = ""
             logs_changed = True
+        if 'Date' in data['logs'].columns:
+            data['logs']['Date'] = pd.to_datetime(data['logs']['Date'], errors='coerce')
+            before_len = len(data['logs'])
+            data['logs'].dropna(subset=['Date'], inplace=True)
+            if len(data['logs']) != before_len:
+                logs_changed = True
 
     if logs_changed:
         data['logs'].to_csv(FILES['logs'], index=False)
@@ -361,6 +422,15 @@ def load_data():
             if c not in prod_df.columns:
                 prod_df[c] = "" if c in ['AgencyCode', 'AgencyName', 'Office', 'Month', 'ActiveFlag'] else 0
                 production_changed = True
+        # Normalize ActiveFlag to "Active"/"Inactive"
+        def normalize_active(val):
+            v = str(val).strip().lower()
+            if v in ["y", "yes", "active", "1", "true"]:
+                return "Active"
+            if v in ["n", "no", "inactive", "0", "false"]:
+                return "Inactive"
+            return str(val).strip() if pd.notna(val) else ""
+        prod_df['ActiveFlag'] = prod_df['ActiveFlag'].apply(normalize_active)
         prod_df['AllYTDWP'] = pd.to_numeric(prod_df['AllYTDWP'], errors='coerce').fillna(0.0)
         prod_df['AllYTDNB'] = pd.to_numeric(prod_df['AllYTDNB'], errors='coerce').fillna(0).astype(int)
         prod_df['PYTDWP'] = pd.to_numeric(prod_df['PYTDWP'], errors='coerce').fillna(0.0)
@@ -372,6 +442,12 @@ def load_data():
             columns=['AgencyCode', 'AgencyName', 'Office', 'Month', 'ActiveFlag', 'AllYTDWP', 'AllYTDNB', 'PYTDWP', 'PYTDNB', 'PYTotalNB']
         )
         production_changed = True
+    # Drop production rows for disallowed offices
+    if not data['production'].empty:
+        before = len(data['production'])
+        data['production'] = data['production'][data['production']['Office'].isin(allowed_offices)]
+        if len(data['production']) != before:
+            production_changed = True
 
     if production_changed:
         data['production'].to_csv(FILES['production'], index=False)
@@ -473,6 +549,17 @@ def parse_production_excel(uploaded_file, office, month_str):
     prod['Office'] = office
     prod['Month'] = month_str
 
+    # Normalize ActiveFlag to "Active"/"Inactive" based on yes/no style values
+    def normalize_active(val):
+        v = str(val).strip().lower()
+        if v in ["y", "yes", "active", "1", "true"]:
+            return "Active"
+        if v in ["n", "no", "inactive", "0", "false"]:
+            return "Inactive"
+        return str(val).strip() if pd.notna(val) else ""
+
+    prod['ActiveFlag'] = prod['ActiveFlag'].apply(normalize_active)
+
     prod['AgencyCode'] = prod['AgencyCode'].astype(str).str.strip()
     prod['AgencyName'] = prod['AgencyName'].astype(str).str.strip()
     prod['ActiveFlag'] = prod['ActiveFlag'].astype(str).str.strip()
@@ -563,23 +650,30 @@ def admin_sidebar():
                 default=current_offices,
                 key="edit_emp_offices"
             )
-            if st.sidebar.button("Save Offices", key="save_emp_offices"):
+            if st.sidebar.button("Update Employee", key="save_emp_offices"):
                 if not new_offices:
                     st.sidebar.error("Select at least one office.")
                 else:
                     # Remove current rows for this employee and recreate with selected offices
-                    st.session_state['employees'] = employees_df[employees_df['Name'] != selected_emp]
-                    next_id = get_new_id(st.session_state['employees'], 'EmployeeID')
+                    existing_df = employees_df[employees_df['Name'] != selected_emp].copy()
+
+                    # Preserve the first EmployeeID for this employee, then append new IDs as needed
+                    emp_rows = employees_df[employees_df['Name'] == selected_emp]
+                    base_id = emp_rows['EmployeeID'].iloc[0] if not emp_rows.empty else get_new_id(existing_df, 'EmployeeID')
+                    max_id = int(existing_df['EmployeeID'].max()) if not existing_df.empty else base_id
+
                     new_rows = []
                     for idx, off in enumerate(new_offices):
+                        eid = base_id if idx == 0 else max_id + idx
                         new_rows.append({
-                            'EmployeeID': next_id + idx,
+                            'EmployeeID': eid,
                             'Name': selected_emp,
                             'Office': off
                         })
+
                     new_emp_df = pd.DataFrame(new_rows)
                     st.session_state['employees'] = pd.concat(
-                        [st.session_state['employees'], new_emp_df],
+                        [existing_df, new_emp_df],
                         ignore_index=True
                     )
                     save_to_csv('employees')
@@ -622,7 +716,7 @@ def admin_sidebar():
     # Production import
     with st.sidebar.expander("Production Import"):
         with st.sidebar.form("prod_import_form"):
-            office_choice = st.selectbox("Office", st.session_state['offices'], key="prod_office_sel")
+            office_choice = st.selectbox("Office", st.session_state['offices'], key="prod_office_sel", format_func=format_office)
             today = datetime.today()
             sel_year = st.number_input("Year", min_value=2000, max_value=2100, value=today.year, step=1)
             sel_month = st.selectbox("Month", list(range(1, 13)), index=today.month - 1)
@@ -645,21 +739,31 @@ def admin_sidebar():
                         save_to_csv('production')
                         st.sidebar.success(f"Imported {len(new_prod)} production rows for {office_choice} ({month_str}); replaced any prior import for that period.")
 
-                        # Add any new agencies from this office that are not already listed
+                        # Add any new agencies from this office that are not already listed (by code), and update ActiveFlag for existing
                         agencies = st.session_state['agencies']
-                        existing_codes = agencies[agencies['Office'] == office_choice]['AgencyCode'] \
-                            .astype(str).str.strip().tolist()
+
+                        def norm_code(val):
+                            return str(val).strip().upper()
+
+                        # Normalize existing agency codes for this office
+                        agencies = agencies.copy()
+                        agencies['AgencyCodeNorm'] = agencies['AgencyCode'].astype(str).str.strip().str.upper()
 
                         # Deduplicate by AgencyCode within this import batch
                         candidate_agencies = new_prod.copy()
                         candidate_agencies['AgencyCode'] = candidate_agencies['AgencyCode'].astype(str).str.strip()
                         candidate_agencies['AgencyName'] = candidate_agencies['AgencyName'].astype(str).str.strip()
-                        candidate_agencies = candidate_agencies.drop_duplicates(subset=['AgencyCode'])
+                        candidate_agencies['AgencyCodeNorm'] = candidate_agencies['AgencyCode'].str.upper()
+                        candidate_agencies = candidate_agencies.drop_duplicates(subset=['AgencyCodeNorm'])
 
-                        missing_mask = ~candidate_agencies['AgencyCode'].isin(existing_codes) & \
-                                       candidate_agencies['AgencyCode'].ne("")
-                        to_add = candidate_agencies[missing_mask]
+                        existing_codes_norm = set(agencies[agencies['Office'] == office_choice]['AgencyCodeNorm'].tolist())
 
+                        to_add = candidate_agencies[
+                            ~candidate_agencies['AgencyCodeNorm'].isin(existing_codes_norm) &
+                            candidate_agencies['AgencyCodeNorm'].ne("")
+                        ]
+
+                        added_count = 0
                         if not to_add.empty:
                             next_agency_id = get_new_id(agencies, 'AgencyID')
                             # pick a default underwriter if available
@@ -671,35 +775,95 @@ def admin_sidebar():
                             new_ag_rows = []
                             for _, row in to_add.iterrows():
                                 agency_code = row['AgencyCode']
-                                existing_same_code = agencies[agencies['AgencyCode'].astype(str).str.strip() == str(agency_code)]
-                                existing_web = existing_same_code['WebAddress'].iloc[0] if not existing_same_code.empty else ""
-                                existing_notes = existing_same_code['Notes'].iloc[0] if not existing_same_code.empty else ""
                                 agency_id = next_agency_id
                                 next_agency_id += 1
                                 new_ag_rows.append({
                                     'AgencyID': agency_id,
                                     'AgencyName': row['AgencyName'],
                                     'Office': office_choice,
-                                    'WebAddress': existing_web if pd.notna(existing_web) else "",
+                                    'WebAddress': "",
                                     'AgencyCode': agency_code,
-                                    'Notes': existing_notes if pd.notna(existing_notes) else "",
-                                    'PrimaryUnderwriter': default_uw
+                                    'Notes': "",
+                                    'PrimaryUnderwriter': default_uw,
+                                    'ActiveFlag': row.get('ActiveFlag', '')
                                 })
+                            if new_ag_rows:
+                                added_count = len(new_ag_rows)
+                                new_ag_df = pd.DataFrame(new_ag_rows)
+                                st.session_state['agencies'] = pd.concat(
+                                    [st.session_state['agencies'], new_ag_df],
+                                    ignore_index=True
+                                )
+                                # Deduplicate by AgencyCode+Office to avoid double imports
+                                st.session_state['agencies']['AgencyCodeNorm'] = st.session_state['agencies']['AgencyCode'].astype(str).str.strip().str.upper()
+                                st.session_state['agencies'] = st.session_state['agencies'].drop_duplicates(
+                                    subset=['AgencyCodeNorm', 'Office'],
+                                    keep='first'
+                                )
+                                st.session_state['agencies'].drop(columns=['AgencyCodeNorm'], inplace=True, errors='ignore')
+                                save_to_csv('agencies')
 
-                            new_ag_df = pd.DataFrame(new_ag_rows)
-                            st.session_state['agencies'] = pd.concat(
-                                [st.session_state['agencies'], new_ag_df],
-                                ignore_index=True
-                            )
-                            # Deduplicate by AgencyCode+Office to avoid double imports
-                            st.session_state['agencies'] = st.session_state['agencies'].drop_duplicates(
-                                subset=['AgencyCode', 'Office'],
-                                keep='first'
-                            )
+                        # Update ActiveFlag for existing agencies based on latest import
+                        if not candidate_agencies.empty:
+                            agencies = st.session_state['agencies'].copy()
+                            agencies['AgencyCodeNorm'] = agencies['AgencyCode'].astype(str).str.strip().str.upper()
+                            for _, crow in candidate_agencies.iterrows():
+                                code_norm = crow['AgencyCodeNorm']
+                                if code_norm in existing_codes_norm:
+                                    mask = (agencies['AgencyCodeNorm'] == code_norm) & (agencies['Office'] == office_choice)
+                                    agencies.loc[mask, 'ActiveFlag'] = crow.get('ActiveFlag', agencies.loc[mask, 'ActiveFlag'])
+                            agencies.drop(columns=['AgencyCodeNorm'], inplace=True, errors='ignore')
+                            st.session_state['agencies'] = agencies
                             save_to_csv('agencies')
-                            st.sidebar.success(f"Added {len(new_ag_df)} new agencies for {office_choice} from import.")
+
+                        if added_count:
+                            st.sidebar.success(f"Added {added_count} new agencies for {office_choice} from import.")
                     else:
                         st.sidebar.warning("Import produced no rows. Check the file format and header names.")
+
+    # Agency deletion (admin-only)
+    with st.sidebar.expander("Delete Agency"):
+        offices = st.session_state.get('offices', [])
+        agencies_df = st.session_state.get('agencies', pd.DataFrame())
+        tasks_df = st.session_state.get('tasks', pd.DataFrame())
+        logs_df = st.session_state.get('logs', pd.DataFrame())
+        contacts_df = st.session_state.get('contacts', pd.DataFrame())
+
+        if not offices or agencies_df.empty:
+            st.sidebar.info("No offices/agencies available to delete.")
+        else:
+            del_office = st.selectbox("Office", offices, key="del_agency_office", format_func=format_office)
+            ag_in_office = agencies_df[agencies_df['Office'] == del_office]
+            if ag_in_office.empty:
+                st.sidebar.info("No agencies in this office.")
+            else:
+                # Show agency name + code for clarity
+                ag_options = ag_in_office.apply(
+                    lambda r: f"{r['AgencyName']} (Code: {r.get('AgencyCode','N/A')})|{r['AgencyID']}",
+                    axis=1
+                ).tolist()
+                ag_choice = st.selectbox("Agency to delete", ag_options, key="del_agency_choice")
+                if ag_choice:
+                    ag_name_part, ag_id_str = ag_choice.rsplit("|", 1)
+                    ag_id = int(ag_id_str)
+                    if st.button("Delete agency", key="delete_agency_btn"):
+                        # Remove agency
+                        st.session_state['agencies'] = agencies_df[agencies_df['AgencyID'] != ag_id]
+                        # Remove contacts for this agency
+                        st.session_state['contacts'] = contacts_df[contacts_df['AgencyID'] != ag_id] if not contacts_df.empty else contacts_df
+                        # Remove tasks for this agency
+                        if not tasks_df.empty and 'AgencyID' in tasks_df.columns:
+                            st.session_state['tasks'] = tasks_df[tasks_df['AgencyID'] != ag_id]
+                            save_to_csv('tasks')
+                        # Remove logs for this agency
+                        if not logs_df.empty and 'AgencyName' in logs_df.columns:
+                            ag_name = ag_in_office[ag_in_office['AgencyID'] == ag_id]['AgencyName'].iloc[0]
+                            st.session_state['logs'] = logs_df[logs_df['AgencyName'] != ag_name]
+                            save_to_csv('logs')
+                        save_to_csv('agencies')
+                        save_to_csv('contacts')
+                        st.sidebar.success(f"Deleted {ag_name_part}.")
+                        st.rerun()
 
 # --- NAV HELPERS ---
 def go_to_office(name):
@@ -891,7 +1055,8 @@ def view_company():
             .agg({'Office': lambda s: ", ".join(sorted(set(s)))})
             .reset_index()
         )
-    metrics_cols = ['Calls_30d', 'Emails_30d', 'Calls_YTD', 'Emails_YTD', 'YTD_WP', 'YTD_NB']
+    # Metrics for employee activity and production
+    metrics_cols = ['InPerson_30d', 'Comm_30d', 'InPerson_YTD', 'Comm_YTD', 'YTD_WP', 'YTD_NB']
     for col in metrics_cols:
         stats[col] = 0
 
@@ -900,6 +1065,7 @@ def view_company():
         logs_dt['Date'] = pd.to_datetime(logs_dt['Date'], errors='coerce')
         logs_dt = logs_dt.dropna(subset=['Date'])
         if not logs_dt.empty:
+            logs_dt['TypeNorm'] = logs_dt['Type'].astype(str).str.lower()
             logs_dt['DateOnly'] = logs_dt['Date'].dt.date
             today = datetime.now().date()
             cutoff_30 = today - timedelta(days=30)
@@ -908,14 +1074,14 @@ def view_company():
             mask_30 = logs_dt['DateOnly'] >= cutoff_30
             mask_ytd = logs_dt['DateOnly'] >= start_year
 
-            calls_30 = logs_dt[mask_30 & (logs_dt['Type'] == 'Call')] \
-                .groupby('EmployeeName').size().reset_index(name='Calls_30d')
-            emails_30 = logs_dt[mask_30 & (logs_dt['Type'] == 'Email')] \
-                .groupby('EmployeeName').size().reset_index(name='Emails_30d')
-            calls_ytd = logs_dt[mask_ytd & (logs_dt['Type'] == 'Call')] \
-                .groupby('EmployeeName').size().reset_index(name='Calls_YTD')
-            emails_ytd = logs_dt[mask_ytd & (logs_dt['Type'] == 'Email')] \
-                .groupby('EmployeeName').size().reset_index(name='Emails_YTD')
+            inperson_30 = logs_dt[mask_30 & (logs_dt['TypeNorm'] == 'in person')] \
+                .groupby('EmployeeName').size().reset_index(name='InPerson_30d')
+            comm_30 = logs_dt[mask_30 & (logs_dt['TypeNorm'].isin(['call', 'email']))] \
+                .groupby('EmployeeName').size().reset_index(name='Comm_30d')
+            inperson_ytd = logs_dt[mask_ytd & (logs_dt['TypeNorm'] == 'in person')] \
+                .groupby('EmployeeName').size().reset_index(name='InPerson_YTD')
+            comm_ytd = logs_dt[mask_ytd & (logs_dt['TypeNorm'].isin(['call', 'email']))] \
+                .groupby('EmployeeName').size().reset_index(name='Comm_YTD')
 
             stats = stats.set_index('Name')
 
@@ -925,10 +1091,10 @@ def view_company():
                 series = df_counts.set_index('EmployeeName')[col_name]
                 stats[col_name] = stats[col_name].add(series, fill_value=0)
 
-            add_counts(calls_30, 'Calls_30d')
-            add_counts(emails_30, 'Emails_30d')
-            add_counts(calls_ytd, 'Calls_YTD')
-            add_counts(emails_ytd, 'Emails_YTD')
+            add_counts(inperson_30, 'InPerson_30d')
+            add_counts(comm_30, 'Comm_30d')
+            add_counts(inperson_ytd, 'InPerson_YTD')
+            add_counts(comm_ytd, 'Comm_YTD')
 
             stats = stats.reset_index()
             for col in metrics_cols:
@@ -970,18 +1136,32 @@ def view_company():
                 stats['YTD_NB'] = stats['YTD_NB'].add(by_uw['AllYTDNB'], fill_value=0).astype(int)
                 stats = stats.reset_index()
 
-    # Sort employees by most calls in last 30 days
-    stats = stats.sort_values(by='Calls_30d', ascending=False, kind='mergesort')
+    # Sort employees by most in-person meetings in last 30 days
+    stats = stats.sort_values(by='InPerson_30d', ascending=False, kind='mergesort')
 
     st.markdown('<div class="panel panel-company">', unsafe_allow_html=True)
 
     # Offices navigation moved above employee summary
     st.subheader("Offices")
+    # Precompute in-person counts per office
+    inperson_by_office = {}
+    logs = st.session_state['logs']
+    if not logs.empty and 'Date' in logs.columns and 'Type' in logs.columns and 'Office' in logs.columns:
+        logs_tmp = logs.copy()
+        logs_tmp['TypeNorm'] = logs_tmp['Type'].astype(str).str.lower()
+        inperson = logs_tmp[logs_tmp['TypeNorm'] == 'in person']
+        if not inperson.empty:
+            inperson_by_office = inperson.groupby('Office').size().to_dict()
+
     cols = st.columns(4)
     for idx, office in enumerate(st.session_state['offices']):
-        if cols[idx % 4].button(f"{office}", key=f"btn_{office}"):
-            go_to_office(office)
-            st.rerun()
+        label = display_office_name(office)
+        inperson_ct = inperson_by_office.get(office, 0)
+        with cols[idx % 4]:
+            if st.button(label, key=f"btn_{office}"):
+                go_to_office(office)
+                st.rerun()
+            st.caption(f"In Person Marketing Calls: {inperson_ct}")
 
     st.subheader("Employee Activity Summary")
     # Compact, square buttons for employee rows (applies broadly, but intended here)
@@ -1021,13 +1201,13 @@ def view_company():
         with ch1:
             st.markdown('<div class="emp-grid-header">Employee</div>', unsafe_allow_html=True)
         with ch2:
-            st.markdown('<div class="emp-grid-header">Calls 30d</div>', unsafe_allow_html=True)
+            st.markdown('<div class="emp-grid-header">In person 30d</div>', unsafe_allow_html=True)
         with ch3:
-            st.markdown('<div class="emp-grid-header">Emails 30d</div>', unsafe_allow_html=True)
+            st.markdown('<div class="emp-grid-header">Emails + Calls 30d</div>', unsafe_allow_html=True)
         with ch4:
-            st.markdown('<div class="emp-grid-header">Calls YTD</div>', unsafe_allow_html=True)
+            st.markdown('<div class="emp-grid-header">In person YTD</div>', unsafe_allow_html=True)
         with ch5:
-            st.markdown('<div class="emp-grid-header">Emails YTD</div>', unsafe_allow_html=True)
+            st.markdown('<div class="emp-grid-header">Emails + Calls YTD</div>', unsafe_allow_html=True)
         with ch6:
             st.markdown('<div class="emp-grid-header">YTD NB / WP</div>', unsafe_allow_html=True)
 
@@ -1042,10 +1222,10 @@ def view_company():
                     break
             with cc1:
                 emp_clicked = st.button(display_name, key=f"comp_emp_{row['Name']}")
-            cc2.markdown(f"<div class='emp-grid-row'>{row['Calls_30d']}</div>", unsafe_allow_html=True)
-            cc3.markdown(f"<div class='emp-grid-row'>{row['Emails_30d']}</div>", unsafe_allow_html=True)
-            cc4.markdown(f"<div class='emp-grid-row'>{row['Calls_YTD']}</div>", unsafe_allow_html=True)
-            cc5.markdown(f"<div class='emp-grid-row'>{row['Emails_YTD']}</div>", unsafe_allow_html=True)
+            cc2.markdown(f"<div class='emp-grid-row'>{row['InPerson_30d']}</div>", unsafe_allow_html=True)
+            cc3.markdown(f"<div class='emp-grid-row'>{row['Comm_30d']}</div>", unsafe_allow_html=True)
+            cc4.markdown(f"<div class='emp-grid-row'>{row['InPerson_YTD']}</div>", unsafe_allow_html=True)
+            cc5.markdown(f"<div class='emp-grid-row'>{row['Comm_YTD']}</div>", unsafe_allow_html=True)
             cc6.markdown(f"<div class='emp-grid-row'>{row.get('YTD_NB', 0)} / ${row.get('YTD_WP', 0):,.0f}</div>", unsafe_allow_html=True)
             if emp_clicked:
                 go_to_employee(row['Name'])
@@ -1061,24 +1241,28 @@ def view_office():
 
     st.button("Back to Company", on_click=lambda: st.session_state.update({'view': 'company'}))
     # Title is now just the office code, e.g. "SDO"
-    st.title(f"{office}")
+    st.title(display_office_name(office))
 
     c1, c2 = st.columns([1.2, 1.8])  # widen employee column, shrink search/agency column
     with c1:
         st.markdown('<div class="panel panel-office-left">', unsafe_allow_html=True)
         st.subheader("Employees")
-        # build per-employee calls/emails for this office
+        # build per-employee activity for this office (in-person, calls+emails)
         office_emp_df = employees[employees['Office'] == office][['Name']].copy()
 
-        metrics_cols = ['Calls_30d', 'Emails_30d', 'Calls_YTD', 'Emails_YTD']
+        metrics_cols = ['InPerson_30d', 'Comm_30d', 'InPerson_YTD', 'Comm_YTD']
         for col in metrics_cols:
             office_emp_df[col] = 0
 
         if not logs.empty and not office_emp_df.empty:
             office_logs = logs[logs['EmployeeName'].isin(office_emp_df['Name'])].copy()
+            # Keep only logs explicitly tagged to this office when available
+            if 'Office' in office_logs.columns:
+                office_logs = office_logs[office_logs['Office'] == office]
             office_logs['Date'] = pd.to_datetime(office_logs['Date'], errors='coerce')
             office_logs = office_logs.dropna(subset=['Date'])
             if not office_logs.empty:
+                office_logs['TypeNorm'] = office_logs['Type'].astype(str).str.lower()
                 office_logs['DateOnly'] = office_logs['Date'].dt.date
                 today = datetime.now().date()
                 cutoff_30 = today - timedelta(days=30)
@@ -1087,14 +1271,14 @@ def view_office():
                 mask_30 = office_logs['DateOnly'] >= cutoff_30
                 mask_ytd = office_logs['DateOnly'] >= start_year
 
-                calls_30 = office_logs[mask_30 & (office_logs['Type'] == 'Call')] \
-                    .groupby('EmployeeName').size().reset_index(name='Calls_30d')
-                emails_30 = office_logs[mask_30 & (office_logs['Type'] == 'Email')] \
-                    .groupby('EmployeeName').size().reset_index(name='Emails_30d')
-                calls_ytd = office_logs[mask_ytd & (office_logs['Type'] == 'Call')] \
-                    .groupby('EmployeeName').size().reset_index(name='Calls_YTD')
-                emails_ytd = office_logs[mask_ytd & (office_logs['Type'] == 'Email')] \
-                    .groupby('EmployeeName').size().reset_index(name='Emails_YTD')
+                inperson_30 = office_logs[mask_30 & (office_logs['TypeNorm'] == 'in person')] \
+                    .groupby('EmployeeName').size().reset_index(name='InPerson_30d')
+                comm_30 = office_logs[mask_30 & (office_logs['TypeNorm'].isin(['call', 'email']))] \
+                    .groupby('EmployeeName').size().reset_index(name='Comm_30d')
+                inperson_ytd = office_logs[mask_ytd & (office_logs['TypeNorm'] == 'in person')] \
+                    .groupby('EmployeeName').size().reset_index(name='InPerson_YTD')
+                comm_ytd = office_logs[mask_ytd & (office_logs['TypeNorm'].isin(['call', 'email']))] \
+                    .groupby('EmployeeName').size().reset_index(name='Comm_YTD')
 
                 office_emp_df = office_emp_df.set_index('Name')
 
@@ -1104,10 +1288,10 @@ def view_office():
                     series = df_counts.set_index('EmployeeName')[col_name]
                     office_emp_df[col_name] = office_emp_df[col_name].add(series, fill_value=0)
 
-                add_counts(calls_30, 'Calls_30d')
-                add_counts(emails_30, 'Emails_30d')
-                add_counts(calls_ytd, 'Calls_YTD')
-                add_counts(emails_ytd, 'Emails_YTD')
+                add_counts(inperson_30, 'InPerson_30d')
+                add_counts(comm_30, 'Comm_30d')
+                add_counts(inperson_ytd, 'InPerson_YTD')
+                add_counts(comm_ytd, 'Comm_YTD')
 
                 office_emp_df = office_emp_df.reset_index()
                 for col in metrics_cols:
@@ -1118,16 +1302,15 @@ def view_office():
         # Header row like company dashboard
         h1, h2, h3, h4, h5 = st.columns([3, 1, 1, 1, 1])
         h1.markdown("")  # remove extra "Employee" label per request
-        h2.markdown("**Calls 30d**")
-        h3.markdown("**Emails 30d**")
-        h4.markdown("**Calls YTD**")
-        h5.markdown("**Emails YTD**")
+        h2.markdown("**In person 30d**")
+        h3.markdown("**Emails + Calls 30d**")
+        h4.markdown("**In person YTD**")
+        h5.markdown("**Emails + Calls YTD**")
 
         # Render per-employee row with the employee name acting as the navigation button
         for _, row in stats_office.iterrows():
             with st.container():
                 ec1, ec2, ec3, ec4, ec5 = st.columns([3, 1, 1, 1, 1])
-                # Strip trailing office code from display only
                 # Strip any trailing office code from stored name for display
                 display_name = row['Name']
                 for off in st.session_state['offices']:
@@ -1139,10 +1322,10 @@ def view_office():
                     display_name,
                     key=f"emp_btn_{office}_{row['Name']}"
                 )
-                ec2.markdown(str(row['Calls_30d']))
-                ec3.markdown(str(row['Emails_30d']))
-                ec4.markdown(str(row['Calls_YTD']))
-                ec5.markdown(str(row['Emails_YTD']))
+                ec2.markdown(str(row['InPerson_30d']))
+                ec3.markdown(str(row['Comm_30d']))
+                ec4.markdown(str(row['InPerson_YTD']))
+                ec5.markdown(str(row['Comm_YTD']))
                 if name_clicked:
                     go_to_employee(row['Name'])
                     st.rerun()
@@ -1220,34 +1403,24 @@ def view_office():
 
             for idx, row in office_agencies_search.iterrows():
                 with st.container(border=True):
-                    ac1, ac2 = st.columns([4, 1])
+                    ac1, ac2, ac3 = st.columns([2, 2, 1])
                     name_clicked = ac1.button(
                         row['AgencyName'],
                         key=f"op_{row['AgencyID']}_{idx}"
                     )
+                    ac2.markdown(f"Code: **{row.get('AgencyCode', 'N/A')}** | UW: **{row.get('PrimaryUnderwriter', 'Unassigned')}**")
                     web_small = str(row.get('WebAddress', '') or '').strip()
                     if web_small:
-                        ac1.caption(f"[{web_small}](http://{web_small})")
-                    ac1.markdown(f"Code: {row.get('AgencyCode', 'N/A')} | Underwriter: {row.get('PrimaryUnderwriter', 'Unassigned')}")
-
+                        ac2.caption(f"[{web_small}](http://{web_small})")
                     notes_content = row.get('Notes', "")
                     if notes_content:
-                        ac1.markdown(f"Notes: {str(notes_content).split('.')[0]}")
+                        ac2.markdown(f"Notes: {str(notes_content).split('.')[0]}")
                     elif row.get('WebAddress') and row['WebAddress'] != "":
-                        ac1.markdown(f"Web: [{row['WebAddress']}](http://{row['WebAddress']})", unsafe_allow_html=True)
+                        ac2.markdown(f"Web: [{row['WebAddress']}](http://{row['WebAddress']})", unsafe_allow_html=True)
+                    ac3.markdown(f"Status: **{row.get('ActiveFlag', 'Unknown')}**")
 
                     if name_clicked:
                         go_to_agency(row)
-                        st.rerun()
-                    if ac2.button("Delete", key=f"del_ag_{row['AgencyID']}_{idx}"):
-                        st.session_state['agencies'] = st.session_state['agencies'][
-                            st.session_state['agencies']['AgencyID'] != row['AgencyID']
-                        ]
-                        st.session_state['contacts'] = st.session_state['contacts'][
-                            st.session_state['contacts']['AgencyID'] != row['AgencyID']
-                        ]
-                        save_to_csv('agencies')
-                        save_to_csv('contacts')
                         st.rerun()
         else:
             st.info("Enter a name in the search box above to quickly find agents.")
@@ -1298,6 +1471,7 @@ def view_office():
                 st.markdown("**Written Premium Trend (by month, office total):**")
                 monthly_agg = office_prod.groupby('Month_dt')[['AllYTDWP', 'PYTDWP']].sum().sort_index()
                 monthly_agg = monthly_agg.rename(columns={'AllYTDWP': 'YTD WP', 'PYTDWP': 'PYTD WP'})
+                monthly_agg.index = monthly_agg.index.strftime("%m/%y")
                 st.line_chart(monthly_agg)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -1337,36 +1511,26 @@ def view_office():
     if not office_agencies_all.empty:
         for idx, row in office_agencies_all.iterrows():
             with st.container(border=True):
-                alc1, alc2 = st.columns([4, 1])
+                alc1, alc2, alc3 = st.columns([2, 2, 1])
 
                 name_clicked = alc1.button(
                     row['AgencyName'],
                     key=f"list_op_{row['AgencyID']}_{idx}"
                 )
+                alc2.markdown(f"Code: **{row.get('AgencyCode', 'N/A')}** | UW: **{row.get('PrimaryUnderwriter', 'Unassigned')}**")
                 web_small = str(row.get('WebAddress', '') or '').strip()
                 if web_small:
-                    alc1.caption(f"[{web_small}](http://{web_small})")
-                alc1.markdown(f"Code: {row.get('AgencyCode', 'N/A')} | Underwriter: {row.get('PrimaryUnderwriter', 'Unassigned')}")
-
+                    alc2.caption(f"[{web_small}](http://{web_small})")
                 notes_content = row.get('Notes', "")
                 if notes_content:
-                    alc1.markdown(f"Notes: {str(notes_content).split('.')[0]}")
+                    alc2.markdown(f"Notes: {str(notes_content).split('.')[0]}")
                 elif row.get('WebAddress'):
-                    alc1.markdown(f"Web: [{row['WebAddress']}](http://{row['WebAddress']})", unsafe_allow_html=True)
+                    alc2.markdown(f"Web: [{row['WebAddress']}](http://{row['WebAddress']})", unsafe_allow_html=True)
+
+                alc3.markdown(f"Status: **{row.get('ActiveFlag', 'Unknown')}**")
 
                 if name_clicked:
                     go_to_agency(row)
-                    st.rerun()
-
-                if alc2.button("Delete", key=f"list_del_{row['AgencyID']}_{idx}"):
-                    st.session_state['agencies'] = st.session_state['agencies'][
-                        st.session_state['agencies']['AgencyID'] != row['AgencyID']
-                    ]
-                    st.session_state['contacts'] = st.session_state['contacts'][
-                        st.session_state['contacts']['AgencyID'] != row['AgencyID']
-                    ]
-                    save_to_csv('agencies')
-                    save_to_csv('contacts')
                     st.rerun()
     else:
         st.info("No accounts are currently assigned to this office.")
@@ -1415,6 +1579,18 @@ def view_agency():
         else:
             st.markdown("Primary Underwriter: Unassigned")
     with top_right:
+        # Activity counts for this agency
+        agency_logs_counts = st.session_state['logs'][
+            st.session_state['logs']['AgencyName'] == agency_dict['AgencyName']
+        ].copy()
+        calls_ct = len(agency_logs_counts[agency_logs_counts['Type'].str.lower() == 'call'])
+        emails_ct = len(agency_logs_counts[agency_logs_counts['Type'].str.lower() == 'email'])
+        inperson_ct = len(agency_logs_counts[agency_logs_counts['Type'].str.lower() == 'in person'])
+        top_right.markdown(
+            f"In person: **{inperson_ct}** | Calls: **{calls_ct}** | Emails: **{emails_ct}**"
+        )
+        top_right.markdown("")
+
         if email_list:
             mailto_link = f"mailto:{email_list}"
             top_right.markdown(
@@ -1465,70 +1641,14 @@ def view_agency():
             c4.metric("YTD NB", int(latest['AllYTDNB']))
             c5.metric("PYTD NB", int(latest.get('PYTDNB', latest.get('PYTotalNB', 0))))
 
-            if len(prod_match) >= 2:
-                prev = prod_match.iloc[1]
-                delta = latest['AllYTDWP'] - prev['AllYTDWP']
-                if delta > 0:
-                    trend_text = f"Increasing (+${delta:,.0f} vs prior month)"
-                elif delta < 0:
-                    trend_text = f"Decreasing (${delta:,.0f} vs prior month)"
-                else:
-                    trend_text = "Flat (no change vs prior month)"
-                st.write(f"Trend: **{trend_text}**")
             st.markdown("</div>", unsafe_allow_html=True)
-
-    # AGENCY DETAILS
-    st.markdown('<div class="panel panel-company">', unsafe_allow_html=True)
-    with st.expander("Details and Edit"):
-        st.markdown(f"**Web:** {agency_dict.get('WebAddress', 'N/A')}")
-        st.markdown(f"**Code:** {agency_dict.get('AgencyCode', 'N/A')}")
-        st.markdown(f"**Primary Underwriter:** {agency_dict.get('PrimaryUnderwriter', 'Unassigned')}")
-        st.markdown("---")
-        st.markdown("**Notes:**")
-        st.write(agency_dict.get('Notes', 'No notes provided.'))
-        st.markdown("---")
-
-        current_uw = agency_dict.get('PrimaryUnderwriter')
-
-        with st.form("edit_agency_form"):
-            e_name = st.text_input("Name", value=agency_dict['AgencyName'])
-            e_web = st.text_input("Web Address", value=agency_dict.get('WebAddress', ''))
-            e_code = st.text_input("Code", value=agency_dict.get('AgencyCode', ''))
-
-            try:
-                uw_index = employees_in_office.index(current_uw)
-            except ValueError:
-                uw_index = 0 if employees_in_office else 0
-
-            e_uw = st.selectbox(
-                "Primary Underwriter", 
-                options=employees_in_office if employees_in_office else [current_uw],
-                index=uw_index if employees_in_office else 0
-            )
-
-            e_notes = st.text_area("Notes", value=agency_dict.get('Notes', ''))
-
-            if st.form_submit_button("Save Changes"):
-                agencies = st.session_state['agencies']
-                index_to_update = agencies[agencies['AgencyID'] == agency_id].index[0]
-
-                agencies.loc[index_to_update, 'AgencyName'] = e_name
-                agencies.loc[index_to_update, 'WebAddress'] = e_web
-                agencies.loc[index_to_update, 'AgencyCode'] = e_code
-                agencies.loc[index_to_update, 'Notes'] = e_notes
-                agencies.loc[index_to_update, 'PrimaryUnderwriter'] = e_uw 
-
-                st.session_state['selected_agency'] = agencies.loc[index_to_update].to_dict()
-                save_to_csv('agencies')
-                st.success("Agency details updated.")
-                st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
 
     # CONTACTS
     st.markdown('<div class="panel panel-contacts">', unsafe_allow_html=True)
-    st.subheader("Contacts")
+    header_col, search_col = st.columns([2, 1])
 
-    with st.expander("Add Contact"):
+    header_col.subheader("Contacts")
+    with header_col.expander("Add Contact"):
         with st.form("add_ct"):
             cn = st.text_input("Name*", key=f"new_ct_name_{agency_id}")
             cr = st.text_input("Role", key=f"new_ct_role_{agency_id}")
@@ -1569,8 +1689,27 @@ def view_agency():
                     ]:
                         st.session_state.pop(k, None)
                     st.rerun()
+    with search_col:
+        search_col.markdown("**Search contacts**")
+        contact_search = st.text_input(
+            "",
+            key=f"contact_search_{agency_id}",
+            placeholder="Name, email, phone, role",
+            label_visibility="collapsed"
+        )
 
-    for idx, row in ag_contacts.iterrows():
+    filtered_ag_contacts = ag_contacts
+    if contact_search:
+        term = contact_search.lower()
+        def match_contact(row):
+            for col in ['Name', 'Role', 'Email', 'Phone']:
+                val = str(row.get(col, "")).lower()
+                if term in val:
+                    return True
+            return False
+        filtered_ag_contacts = ag_contacts[ag_contacts.apply(match_contact, axis=1)]
+
+    for idx, row in filtered_ag_contacts.iterrows():
         contact_id = row['ContactID']
         is_editing = st.session_state['editing_contact_id'] == contact_id
         contact_name = row['Name'] 
@@ -1650,19 +1789,20 @@ def view_agency():
         employees_selected = st.multiselect(
             "Employees",
             options=office_employees,
-            default=office_employees[:1] if office_employees else [],
-            key=f"log_emps_{agency_id}"
+            default=[],
+            key=f"log_emps_{agency_id}",
+            format_func=display_employee_name
         )
 
         contact_options = ag_contacts['Name'].tolist()
         contacts_selected = st.multiselect(
             "Contacts",
             options=contact_options,
-            default=contact_options[:1] if contact_options else [],
+            default=[],
             key=f"log_contacts_{agency_id}"
         )
 
-        type_ = st.radio("Type", ["Call", "Email"], horizontal=True, key=f"log_type_{agency_id}")
+        type_ = st.radio("Type", ["Call", "Email", "In person"], horizontal=True, key=f"log_type_{agency_id}")
         notes = st.text_area("Notes", key=f"log_notes_{agency_id}")
 
         if st.form_submit_button("Log"):
@@ -1687,7 +1827,8 @@ def view_agency():
                             'AgencyName': agency_dict['AgencyName'],
                             'ContactName': ct,
                             'Type': type_,
-                            'Notes': notes
+                            'Notes': notes,
+                            'Office': agency_dict['Office']
                         })
 
                 new_log_df = pd.DataFrame(new_rows)
@@ -1721,10 +1862,22 @@ def view_agency():
         if contact_filter != 'All Contacts':
             agency_logs = agency_logs[agency_logs['ContactName'] == contact_filter]
 
-        unique_types = ['All Types'] + agency_logs['Type'].unique().tolist()
+        # Ensure type filter includes the new "In person" type
+        type_options = agency_logs['Type'].dropna().unique().tolist()
+        # Normalize capitalization for consistency
+        normalized_types = []
+        for t in type_options:
+            t_norm = str(t).strip()
+            if t_norm.lower() == "in person":
+                t_norm = "In person"
+            normalized_types.append(t_norm)
+        if "In person" not in normalized_types:
+            normalized_types.append("In person")
+        unique_types = ['All Types'] + sorted(set(normalized_types))
+
         type_filter = filter_col2.selectbox("Filter by Type", unique_types)
         if type_filter != 'All Types':
-            agency_logs = agency_logs[agency_logs['Type'] == type_filter]
+            agency_logs = agency_logs[agency_logs['Type'].str.strip().str.lower() == type_filter.lower()]
 
         search_term = filter_col3.text_input("Search Employee/Notes/Keywords")
         if search_term:
@@ -1746,6 +1899,53 @@ def view_agency():
         )
     else:
         st.info("No activity history recorded for this account yet.")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # AGENCY DETAILS (moved to bottom)
+    st.markdown('<div class="panel panel-company">', unsafe_allow_html=True)
+    with st.expander("Edit Agency Details"):
+        st.markdown(f"**Web:** {agency_dict.get('WebAddress', 'N/A')}")
+        st.markdown(f"**Code:** {agency_dict.get('AgencyCode', 'N/A')}")
+        st.markdown(f"**Primary Underwriter:** {agency_dict.get('PrimaryUnderwriter', 'Unassigned')}")
+        st.markdown("---")
+        st.markdown("**Notes:**")
+        st.write(agency_dict.get('Notes', 'No notes provided.'))
+        st.markdown("---")
+
+        current_uw = agency_dict.get('PrimaryUnderwriter')
+
+        with st.form("edit_agency_form"):
+            e_name = st.text_input("Name", value=agency_dict['AgencyName'])
+            e_web = st.text_input("Web Address", value=agency_dict.get('WebAddress', ''))
+            e_code = st.text_input("Code", value=agency_dict.get('AgencyCode', ''))
+
+            try:
+                uw_index = employees_in_office.index(current_uw)
+            except ValueError:
+                uw_index = 0 if employees_in_office else 0
+
+            e_uw = st.selectbox(
+                "Primary Underwriter", 
+                options=employees_in_office if employees_in_office else [current_uw],
+                index=uw_index if employees_in_office else 0
+            )
+
+            e_notes = st.text_area("Notes", value=agency_dict.get('Notes', ''))
+
+            if st.form_submit_button("Save Changes"):
+                agencies = st.session_state['agencies']
+                index_to_update = agencies[agencies['AgencyID'] == agency_id].index[0]
+
+                agencies.loc[index_to_update, 'AgencyName'] = e_name
+                agencies.loc[index_to_update, 'WebAddress'] = e_web
+                agencies.loc[index_to_update, 'AgencyCode'] = e_code
+                agencies.loc[index_to_update, 'Notes'] = e_notes
+                agencies.loc[index_to_update, 'PrimaryUnderwriter'] = e_uw 
+
+                st.session_state['selected_agency'] = agencies.loc[index_to_update].to_dict()
+                save_to_csv('agencies')
+                st.success("Agency details updated.")
+                st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
 # --- VIEW: CONTACT DETAIL (Level 4) ---
@@ -1789,137 +1989,15 @@ def view_contact():
         else:
             st.markdown(status_text)
     with top_right:
-        st.markdown(f"**Office:** {office or 'N/A'}")
+        st.markdown(f"**Office:** {format_office(office) if office else 'N/A'}")
         if contact.get('Email'):
             st.markdown(f"[Email {contact['Name']}](mailto:{contact['Email']})")
         if contact.get('Phone'):
             st.markdown(f"Phone: {contact['Phone']}")
+        if contact.get('LinkedIn'):
+            st.markdown(f"[LinkedIn]({contact['LinkedIn']})", unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # AI drafting (in-app, optional)
-    st.markdown('<div class="panel panel-activity">', unsafe_allow_html=True)
-    with st.expander("AI: Draft an email to this contact"):
-        pref = contact.get('Preferences', '')
-        recent_logs = st.session_state.get('logs', pd.DataFrame())
-        if not recent_logs.empty:
-            contact_logs = recent_logs[recent_logs['ContactName'] == contact.get('Name', '')].copy()
-            if agency_name:
-                contact_logs = contact_logs[contact_logs['AgencyName'] == agency_name]
-            contact_logs = contact_logs.sort_values('Date', ascending=False).head(5)
-            history_snippet = "\n".join(
-                f"- {row['Date']} {row['Type']} by {row['EmployeeName']}: {row['Notes']}"
-                for _, row in contact_logs.iterrows()
-            )
-        else:
-            history_snippet = ""
-
-        template_options = {
-            "Intro / First touch": "Introduce yourself and request a brief intro call.",
-            "Follow-up after call": "Thank them for the recent call and confirm next steps.",
-            "Renewal check-in": "Check in ahead of renewal to review needs and pricing.",
-            "Cross-sell / upsell": "Suggest additional lines that complement their current coverage.",
-            "Appointment request": "Request a short meeting to review their program.",
-            "Product spotlight": "Highlight one or two products that fit their industry.",
-        }
-        goal_options = [
-            "Set a meeting",
-            "Set a call",
-            "Ask for business",
-            "Check in",
-            "Ask for referrals",
-        ]
-        product_choices = [p.get("name", "") for p in PRODUCT_HIGHLIGHTS if p.get("name")] or [
-            "PBOP",
-            "Commercial Property",
-            "Inland Marine",
-            "Builders Risk",
-            "Surplus Lines",
-        ]
-
-        c1, c2, c3, c4 = st.columns([1, 1, 1, 1])
-        with c1:
-            tone = st.selectbox("Tone", ["Friendly", "Professional", "Succinct"], index=0, key=f"ai_tone_{contact_id}")
-        with c2:
-            template_choice = st.selectbox("Prompt template", list(template_options.keys()), key=f"ai_template_{contact_id}")
-        with c3:
-            goal = st.selectbox("Goal", goal_options, key=f"ai_goal_{contact_id}")
-        with c4:
-            selected_products = st.multiselect("Products to feature", product_choices, key=f"ai_products_{contact_id}")
-        include_pref = pref if pref else "None provided"
-        draft_key = f"ai_draft_area_{contact_id}"
-        ai_draft = st.session_state.get(draft_key, st.session_state.get(f"ai_draft_{contact_id}", ""))
-
-        def build_prompt():
-            prod_names = ", ".join(selected_products) if selected_products else "Relevant commercial products"
-            selected_detail = [
-                f"{p.get('name','')}: {p.get('blurb','')}; Bullets: {', '.join(p.get('bullets', []))}"
-                for p in PRODUCT_HIGHLIGHTS
-                if p.get("name") in selected_products
-            ]
-            prod_detail_text = "; ".join(selected_detail) if selected_detail else "Use only provided product details if available; do not invent coverage specifics."
-            sender_name = agency.get('PrimaryUnderwriter', 'our team') if agency is not None else "our team"
-            # Strip office suffix from stored underwriter names (e.g., 'Employee 1 SDO' -> 'Employee 1')
-            for off in st.session_state.get('offices', []):
-                suff = f" {off}"
-                if sender_name.endswith(suff):
-                    sender_name = sender_name[:-len(suff)]
-                    break
-            contact_notes = contact.get('Notes', '').strip() or "No additional contact notes."
-            return (
-                f"You are writing as {sender_name} at Deans & Homer (commercial). "
-                f"Recipient: {contact.get('Name','')} ({contact.get('Role','')}) at {agency_name}. "
-                f"Prompt template: {template_choice} -> {template_options.get(template_choice,'')}. "
-                f"Goal: {goal or template_options.get(template_choice, 'Introduce yourself and request a call.')}. "
-                f"Tone: {tone}. "
-                f"Contact preferences: {include_pref}. "
-                f"Contact notes to weave in: {contact_notes}. "
-                f"Recent activity (summarize key takeaways, dates, and next steps):\n{history_snippet or 'No prior activity recorded.'} "
-                f"Products to feature prominently: {prod_names}. "
-                f"Product details to rely on (use verbatim; do not invent): {prod_detail_text}. "
-                f"Structure: clear subject, short opener, 2-3 tight sentences in body, explicit CTA matching the goal, and a friendly sign-off. "
-                f"Stay factual—only use provided details; do not invent coverage specifics."
-            )
-
-        if ai_client_available():
-            if st.button("Generate draft", key=f"ai_gen_{contact_id}"):
-                prompt = build_prompt()
-                with st.spinner("Calling OpenAI..."):
-                    draft, err = run_ai_prompt(prompt, system_prompt="You are a concise insurance marketing outreach assistant.")
-                if err or not draft:
-                    msg = err or "No text returned from AI."
-                    st.warning(f"{msg}\nShowing the prompt below so you can copy/paste into ChatGPT.")
-                    st.session_state[f"ai_draft_{contact_id}"] = prompt
-                    ai_draft = prompt
-                else:
-                    st.session_state[f"ai_draft_{contact_id}"] = draft
-                    ai_draft = draft
-        else:
-            st.info("To generate in-app drafts, set OPENAI_API_KEY and install openai. Showing editable placeholder instead.")
-            if st.button("Build prompt text", key=f"ai_prompt_only_{contact_id}"):
-                st.session_state[f"ai_draft_{contact_id}"] = build_prompt()
-                ai_draft = st.session_state[f"ai_draft_{contact_id}"]
-
-        # Keep widget state in sync without double-setting value + session
-        if draft_key not in st.session_state:
-            st.session_state[draft_key] = ai_draft
-        else:
-            st.session_state[draft_key] = ai_draft
-        ai_draft = st.text_area("Draft / prompt", height=220, key=draft_key)
-        st.session_state[f"ai_draft_{contact_id}"] = ai_draft
-
-        # Quick email launcher using current draft
-        email_addr = contact.get('Email', '')
-        if email_addr:
-            # Encode newlines as CRLF for mail clients; avoid '+' substitution for readability
-            subject_text = f"{agency_name} - Quick follow-up"
-            body_text = ai_draft or ""
-            subject_enc = quote(subject_text)
-            body_enc = quote(body_text.replace("\n", "\r\n"))
-            mailto_url = f"mailto:{email_addr}?subject={subject_enc}&body={body_enc}"
-            st.markdown(f"[Open email draft in your client]({mailto_url})")
-        else:
-            st.caption("Add an email for this contact to enable one-click email draft.")
-    st.markdown('</div>', unsafe_allow_html=True)
 
     # Add log scoped to this contact
     st.markdown('<div class="panel panel-activity">', unsafe_allow_html=True)
@@ -1934,9 +2012,10 @@ def view_contact():
         employees_selected = st.multiselect(
             "Employees involved",
             options=office_emps,
-            default=office_emps[:1] if office_emps else []
+            default=[],
+            format_func=display_employee_name
         )
-        log_type = st.radio("Type", ["Call", "Email"], horizontal=True)
+        log_type = st.radio("Type", ["Call", "Email", "In person"], horizontal=True)
         log_notes = st.text_area("Notes / summary")
         if st.form_submit_button("Add activity"):
             if not office_emps:
@@ -1955,7 +2034,8 @@ def view_contact():
                         'AgencyName': agency_name,
                         'ContactName': contact_name,
                         'Type': log_type,
-                        'Notes': log_notes
+                        'Notes': log_notes,
+                        'Office': office
                     })
                 new_log_df = pd.DataFrame(new_rows)
                 st.session_state['logs'] = pd.concat(
@@ -1983,9 +2063,10 @@ def view_contact():
             st.info("No activity logged for this contact yet.")
         else:
             contact_logs = contact_logs.sort_values('Date', ascending=False)
-            call_count = (contact_logs['Type'] == 'Call').sum()
-            email_count = (contact_logs['Type'] == 'Email').sum()
-            st.markdown(f"Calls: **{call_count}** | Emails: **{email_count}**")
+            call_count = (contact_logs['Type'].str.lower() == 'call').sum()
+            email_count = (contact_logs['Type'].str.lower() == 'email').sum()
+            inperson_count = (contact_logs['Type'].str.lower() == 'in person').sum()
+            st.markdown(f"Calls: **{call_count}** | Emails: **{email_count}** | In person: **{inperson_count}**")
 
             st.dataframe(
                 contact_logs[['Date', 'Type', 'EmployeeName', 'Notes']],
@@ -2065,7 +2146,7 @@ def view_employee():
             break
 
     st.title(f"{display_emp}")
-    st.write(f"Office: **{emp_office}**")
+    st.write(f"Office: **{format_office(emp_office)}**")
 
     # ---- PRODUCTION PANEL ----
     st.markdown('<div class="panel panel-prod">', unsafe_allow_html=True)
@@ -2093,6 +2174,13 @@ def view_employee():
                 latest_prod = prod_emp.loc[idx].copy()
                 latest_prod = latest_prod.drop_duplicates(subset=['AgencyCode'])
 
+                # Normalize merge keys to strings to avoid dtype mismatches
+                latest_prod['AgencyCode'] = latest_prod['AgencyCode'].astype(str).str.strip()
+                latest_prod['AgencyName'] = latest_prod['AgencyName'].astype(str).str.strip()
+                uw_agencies = uw_agencies.copy()
+                uw_agencies['AgencyCode'] = uw_agencies['AgencyCode'].astype(str).str.strip()
+                uw_agencies['AgencyName'] = uw_agencies['AgencyName'].astype(str).str.strip()
+
                 # Merge in Office from uw_agencies, but keep a clean 'Office' column
                 latest_prod = latest_prod.merge(
                     uw_agencies[['AgencyCode', 'AgencyName', 'Office']],
@@ -2113,9 +2201,11 @@ def view_employee():
                 total_wp = latest_prod['AllYTDWP'].sum()
                 total_nb = latest_prod['AllYTDNB'].sum()
 
-                st.write(f"Agencies under this employee: **{len(latest_prod)}**")
-                st.write(f"Total YTD Written Premium (latest month per agency): **${total_wp:,.0f}**")
-                st.write(f"Total YTD New Business Count (latest month per agency): **{int(total_nb)}**")
+                st.markdown(
+                    f"Agencies under this employee: **{len(latest_prod)}**  |  "
+                    f"Total YTD Written Premium: **${total_wp:,.0f}**  |  "
+                    f"Total YTD New Business Count: **{int(total_nb)}**"
+                )
                 st.markdown("")
 
                 agency_rows_for_later = latest_prod.sort_values('AllYTDWP', ascending=False)
@@ -2128,41 +2218,40 @@ def view_employee():
     # ---- TASKS / FOLLOW-UPS ----
     # ---- ACTIVITY COUNTS PANEL ----
     st.markdown('<div class="panel panel-activity">', unsafe_allow_html=True)
-    st.subheader("Call/Email Activity")
+    st.subheader("In person / Call / Email Activity")
 
     logs_dt = logs.copy()
     if not logs_dt.empty and 'Date' in logs_dt.columns:
         logs_dt['Date'] = pd.to_datetime(logs_dt['Date'], errors='coerce')
         logs_dt = logs_dt.dropna(subset=['Date'])
         logs_emp = logs_dt[logs_dt['EmployeeName'] == emp_name].copy()
+        logs_emp['TypeNorm'] = logs_emp['Type'].astype(str).str.lower()
         today = datetime.now().date()
         cutoff_30 = today - timedelta(days=30)
         logs_emp['DateOnly'] = logs_emp['Date'].dt.date
         mask_30 = logs_emp['DateOnly'] >= cutoff_30
         mask_ytd = logs_emp['DateOnly'] >= date(today.year, 1, 1)
 
-        calls_30 = len(logs_emp[mask_30 & (logs_emp['Type'] == 'Call')])
-        emails_30 = len(logs_emp[mask_30 & (logs_emp['Type'] == 'Email')])
-        calls_ytd = len(logs_emp[mask_ytd & (logs_emp['Type'] == 'Call')])
-        emails_ytd = len(logs_emp[mask_ytd & (logs_emp['Type'] == 'Email')])
+        inperson_30 = len(logs_emp[mask_30 & (logs_emp['TypeNorm'] == 'in person')])
+        calls_30 = len(logs_emp[mask_30 & (logs_emp['TypeNorm'] == 'call')])
+        emails_30 = len(logs_emp[mask_30 & (logs_emp['TypeNorm'] == 'email')])
+        inperson_ytd = len(logs_emp[mask_ytd & (logs_emp['TypeNorm'] == 'in person')])
+        calls_ytd = len(logs_emp[mask_ytd & (logs_emp['TypeNorm'] == 'call')])
+        emails_ytd = len(logs_emp[mask_ytd & (logs_emp['TypeNorm'] == 'email')])
 
-        c1, c2, c3, c4 = st.columns(4)
-        c1.metric("Calls 30d", calls_30)
-        c2.metric("Emails 30d", emails_30)
-        c3.metric("Calls YTD", calls_ytd)
-        c4.metric("Emails YTD", emails_ytd)
+        c1, c2, c3, c4, c5, c6 = st.columns(6)
+        c1.metric("In person 30d", inperson_30)
+        c2.metric("Calls 30d", calls_30)
+        c3.metric("Emails 30d", emails_30)
+        c4.metric("In person YTD", inperson_ytd)
+        c5.metric("Calls YTD", calls_ytd)
+        c6.metric("Emails YTD", emails_ytd)
     else:
         st.info("No activity logged for this employee yet.")
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ---- TASKS / FOLLOW-UPS ----
+    # ---- CONTACTS NEEDING FOLLOW-UP ----
     st.markdown('<div class="panel panel-activity">', unsafe_allow_html=True)
-    st.subheader("Tasks / Follow-ups")
-
-    tasks_df = st.session_state.get('tasks', pd.DataFrame())
-    emp_tasks = tasks_df[tasks_df['Owner'] == emp_name] if not tasks_df.empty else pd.DataFrame()
-
-    # Derived stale contacts (>90d since last contact) for this employee's agencies
     cutoff = datetime.now().date() - timedelta(days=90)
     stale_contacts = []
     if not uw_agencies.empty:
@@ -2192,69 +2281,15 @@ def view_employee():
                         'DaysSince': days_ago if days_ago is not None else "Never"
                     })
 
-    with st.expander("Add task"):
-        with st.form("add_emp_task_form"):
-            task_title = st.text_input("Title*")
-            task_due = st.date_input("Due date", value=datetime.today().date())
-            agency_opts = ["Unassigned"] + uw_agencies['AgencyName'].tolist()
-            task_agency = st.selectbox("Agency (optional)", options=agency_opts)
-            task_notes = st.text_area("Notes")
-            if st.form_submit_button("Add Task"):
-                agency_id_val = None
-                if task_agency != "Unassigned":
-                    matched = uw_agencies[uw_agencies['AgencyName'] == task_agency]
-                    agency_id_val = matched['AgencyID'].iloc[0] if not matched.empty else None
-                new_task = pd.DataFrame({
-                    'TaskID': [get_new_id(tasks_df, 'TaskID')],
-                    'AgencyID': [agency_id_val if agency_id_val is not None else ""],
-                    'Title': [task_title],
-                    'DueDate': [task_due.strftime("%Y-%m-%d")],
-                    'Status': ['Open'],
-                    'Owner': [emp_name],
-                    'Notes': [task_notes],
-                })
-                st.session_state['tasks'] = pd.concat([tasks_df, new_task], ignore_index=True)
-                save_to_csv('tasks')
-                st.rerun()
-
-    # Show employee-owned tasks
-    if emp_tasks.empty:
-        st.info("No tasks assigned to this employee.")
-    else:
-        emp_tasks = emp_tasks.copy()
-        emp_tasks['DueDateParsed'] = pd.to_datetime(emp_tasks['DueDate'], errors='coerce')
-        emp_tasks = emp_tasks.sort_values('DueDateParsed')
-        for _, trow in emp_tasks.iterrows():
-            with st.container(border=True):
-                t1, t2, t3 = st.columns([4, 2, 1])
-                due_str = trow['DueDate'] if pd.notna(trow['DueDate']) else "No due date"
-                t1.markdown(f"**{trow['Title']}**  \nAgency: {trow.get('AgencyID', '')}  \nDue: {due_str}")
-                if trow.get('Notes'):
-                    t1.markdown(f"Notes: {trow['Notes']}")
-                t2.markdown(f"Status: **{trow.get('Status', 'Open')}**")
-                if t2.button("Mark done", key=f"emp_task_done_{trow['TaskID']}"):
-                    st.session_state['tasks'].loc[
-                        st.session_state['tasks']['TaskID'] == trow['TaskID'],
-                        'Status'
-                    ] = 'Done'
-                    save_to_csv('tasks')
-                    st.rerun()
-                if t3.button("Delete", key=f"emp_task_del_{trow['TaskID']}"):
-                    st.session_state['tasks'] = st.session_state['tasks'][
-                        st.session_state['tasks']['TaskID'] != trow['TaskID']
-                    ]
-                    save_to_csv('tasks')
-                    st.rerun()
-
-    # Show stale contacts as implicit tasks
     if stale_contacts:
-        st.markdown("**Contacts needing outreach (>90 days)**")
+        st.subheader("Contacts Needing Follow-up")
         stale_df = pd.DataFrame(stale_contacts)
         st.dataframe(
             stale_df[['ContactName', 'AgencyName', 'LastContact', 'DaysSince']],
             hide_index=True,
             use_container_width=True
         )
+    st.markdown('</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
     # ---- CALL HISTORY PANEL ----
@@ -2293,7 +2328,7 @@ def view_employee():
                     f"{prow.get('AgencyName', '')}  \nCode: {prow.get('AgencyCode', '')}",
                     key=f"emp_prod_open_{prow.get('AgencyCode','')}_{emp_name}_{idx_row}"
                 )
-                pc2.markdown(f"Office: {prow.get('Office', '')}")
+                pc2.markdown(f"Office: {format_office(prow.get('Office', ''))}")
                 pc3.markdown(f"YTD WP: ${prow.get('AllYTDWP', 0):,.0f}")
                 pc4.markdown(f"YTD NB: {int(prow.get('AllYTDNB', 0))}")
                 pc5.markdown(f"Active: {prow.get('ActiveFlag', '')}")

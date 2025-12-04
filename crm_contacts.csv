@@ -1,2 +1,3 @@
-ContactID,AgencyID,Name,Role,Email,Notes,Phone,Preferences,LinkedIn
-2,25,Paul Keller,Agent,paul@paul.com,,8582752385.0,,
+ContactID,AgencyID,Name,Role,Email,Phone,Notes,Preferences,LinkedIn
+1,1,Agent test 1,Agent,agent@agent.com,,,,
+2,107,Drachman,Owner,email@email.com,,,,

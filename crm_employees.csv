@@ -1,68 +1,10 @@
 EmployeeID,Name,Office
-2,Employee 2 BRA,BRA
-3,Employee 3 BRA,BRA
-4,Employee 4 BRA,BRA
-5,Employee 5 BRA,BRA
-6,Employee 1 FNO,FNO
-7,Employee 2 FNO,FNO
-8,Employee 3 FNO,FNO
-9,Employee 4 FNO,FNO
-10,Employee 5 FNO,FNO
-11,Employee 1 LAF,LAF
-12,Employee 2 LAF,LAF
-13,Employee 3 LAF,LAF
-14,Employee 4 LAF,LAF
-15,Employee 5 LAF,LAF
-16,Employee 1 LKO,LKO
-17,Employee 2 LKO,LKO
-18,Employee 3 LKO,LKO
-19,Employee 4 LKO,LKO
-20,Employee 5 LKO,LKO
-21,Employee 1 MID,MID
-22,Employee 2 MID,MID
-23,Employee 3 MID,MID
-24,Employee 4 MID,MID
-25,Employee 5 MID,MID
-26,Employee 1 PAS,PAS
-27,Employee 2 PAS,PAS
-28,Employee 3 PAS,PAS
-29,Employee 4 PAS,PAS
-30,Employee 5 PAS,PAS
-31,Employee 1 PHX,PHX
-32,Employee 2 PHX,PHX
-33,Employee 3 PHX,PHX
-34,Employee 4 PHX,PHX
-35,Employee 5 PHX,PHX
-36,Employee 1 RCH,RCH
-37,Employee 2 RCH,RCH
-38,Employee 3 RCH,RCH
-39,Employee 4 RCH,RCH
-40,Employee 5 RCH,RCH
-41,Employee 1 REN,REN
-42,Employee 2 REN,REN
-43,Employee 3 REN,REN
-44,Employee 4 REN,REN
-45,Employee 5 REN,REN
-46,Employee 1 SBO,SBO
-47,Employee 2 SBO,SBO
-48,Employee 3 SBO,SBO
-49,Employee 4 SBO,SBO
-50,Employee 5 SBO,SBO
-51,Employee 1 SDO,SDO
-52,Employee 2 SDO,SDO
-53,Employee 3 SDO,SDO
-54,Employee 4 SDO,SDO
-55,Employee 5 SDO,SDO
-56,Employee 1 SEA,SEA
-57,Employee 2 SEA,SEA
-58,Employee 3 SEA,SEA
-59,Employee 4 SEA,SEA
-60,Employee 5 SEA,SEA
-61,Employee 1 LVS,LVS
-62,Employee 2 LVS,LVS
-63,Employee 3 LVS,LVS
-64,Employee 4 LVS,LVS
-65,Employee 5 LVS,LVS
-66,Employee 1 BRA,BRA
-67,Employee 1 BRA,LKO
-68,Employee 1 BRA,SDO
+1,Leif,SDO
+2,Leif,PHX
+3,Daly,SDO
+5,Robert,SDO
+6,Allan,SDO
+7,Kevin,SDO
+7,Kevin,LVS
+8,Brian,PHX
+9,Brian,REN

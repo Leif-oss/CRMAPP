@@ -1,30 +1,5 @@
-Date,EmployeeName,AgencyName,ContactName,Type,Notes
-2025-11-22 10:57:57,Employee 1 BRA,Agency 1,agent 1,Call,test
-2025-11-22 11:14:16,Employee 1 SDO,Agency 1,agent 1,Email,new bus ask
-2025-11-22 11:14:16,Employee 3 SDO,Agency 1,agent 1,Email,new bus ask
-2025-11-22 11:14:16,Employee 5 SDO,Agency 1,agent 1,Email,new bus ask
-2025-11-04 13:30:16,Employee 1 SDO,Agency 1,agent 1,Call,
-2025-11-04 13:30:16,Employee 4 SDO,Agency 1,agent 1,Call,
-2025-11-22 16:09:54,Employee 1 SDO,Agency 1,agent 1,Call,"wiped hiss butt
-"
-2025-11-22 16:09:54,Employee 1 SDO,Agency 1,Max ,Call,"wiped hiss butt
-"
-2025-11-23 10:51:05,Employee 1 SDO,Agency 1,agent 1,Call,Met at IDAY
-2025-11-23 10:51:05,Employee 2 SDO,Agency 1,agent 1,Call,Met at IDAY
-2025-11-23 10:51:05,Employee 3 SDO,Agency 1,agent 1,Call,Met at IDAY
-2025-11-23 10:51:05,Employee 4 SDO,Agency 1,agent 1,Call,Met at IDAY
-2025-11-23 10:51:05,Employee 5 SDO,Agency 1,agent 1,Call,Met at IDAY
-2025-11-23 12:04:23,Employee 1 SDO,Agency 1,agent 1,Call,
-2025-11-23 12:04:23,Employee 1 SDO,Agency 1,Tim tom,Call,
-2025-11-23 12:04:23,Employee 1 SDO,Agency 1,Max ,Call,
-2025-11-23 12:04:23,Employee 2 SDO,Agency 1,agent 1,Call,
-2025-11-23 12:04:23,Employee 2 SDO,Agency 1,Tim tom,Call,
-2025-11-23 12:04:23,Employee 2 SDO,Agency 1,Max ,Call,
-2025-11-23 12:04:23,Employee 3 SDO,Agency 1,agent 1,Call,
-2025-11-23 12:04:23,Employee 3 SDO,Agency 1,Tim tom,Call,
-2025-11-23 12:04:23,Employee 3 SDO,Agency 1,Max ,Call,
-2025-11-23 17:11:08,Employee 1 SDO,Agency 1,Tom JOnes,Call,
-2025-11-24 14:45:59,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Call,"Grabbed drinks, wants a highlight sheet"
-2025-11-24 14:45:59,Employee 3 SDO,ALLIANT INSURAN,Tim Jones,Call,"Grabbed drinks, wants a highlight sheet"
-2025-11-24 14:49:18,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Call,
-2025-11-24 14:49:30,Employee 1 SDO,ALLIANT INSURAN,Tim Jones,Email,
+Date,EmployeeName,AgencyName,ContactName,Type,Notes,Office
+2025-12-04 12:21:55,Daly,ALLIANT INSURAN,Agent test 1,In person,LUnch,SDO
+2025-12-04 12:21:55,Leif,ALLIANT INSURAN,Agent test 1,In person,LUnch,SDO
+2025-12-04 12:25:43,Leif,DRACHMAN,Drachman,In person,yell,PHX
+2025-12-04 12:25:43,Brian,DRACHMAN,Drachman,In person,yell,PHX
